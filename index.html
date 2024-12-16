@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcar Consulta Dermatológica</title>
+    <script>
+        function acesso(event) {
+            event.preventDefault(); // Impede o envio do formulário
+
+            // Obtém os valores dos campos de entrada
+            let email = document.getElementById('e-mail').value.trim();
+            let password = document.getElementById('password').value.trim();
+
+            // Verifica se o e-mail e a senha estão corretos
+            if (email === "hrecay@hotmail.com" && password === "123456") {
+                // Redireciona para a página agenda.html
+                window.location.href = "agenda.html";
+            } else {
+                // Exibe uma mensagem de erro caso os valores estejam incorretos
+                alert("E-mail ou senha incorretos!"); 
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            text-align: left;
+        }
+        input[type="text"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #fc447c;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #fc447c;
+        }
+        .logo {
+            max-width: 250px;
+            margin-bottom: 0px;
+        }
+        .img{
+            width: 180px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <a>Precisa marcar um horairo, <a href="cadastro.html">clique aqui</a> </a>
+        <img src="img/santacruz-logo.png" alt="Logo da Santa Cruz" class="img">
+        <h1>Clínica</h1>
+        <form onsubmit="acesso(event)">
+            <label for="e-mail">E-mail:</label>
+            <input type="text" id="e-mail" name="e-mail" placeholder="E-mail" required>
+
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" placeholder="Senha" required>            
+            
+            <button type="submit">ACESSAR</button>
+        </form>
+    </div>
+</body>
+</html>
